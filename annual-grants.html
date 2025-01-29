@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annual Grants</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="shadow-md bg-white tracking-wide relative z-50">
+      <section
+        class="flex items-center lg:justify-center py-2.5 sm:px-10 px-4 border-gray-200 min-h-[70px]"
+      >
+        <!-- <div class='left-10 absolute z-50 bg-gray-100 flex items-center px-4 py-2.5 rounded max-lg:hidden'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904"
+            class="cursor-pointer fill-gray-400 mr-2.5 inline-block w-[18px] h-[18px]">
+            <path
+              d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
+            </path>
+          </svg>
+          <input type='text' placeholder='Search...' class="outline-none bg-transparent w-full text-sm" />
+        </div> -->
+
+        <a href="javascript:void(0)" class="max-sm:hidden"
+          ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+        </a>
+
+        <div
+          id="toggleOpen"
+          class="flex items-center justify-between w-full lg:hidden"
+        >
+          <a href="javascript:void(0)" class="hidden max-sm:block"
+            ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-24" />
+          </a>
+          <button class="ml-[60px]">
+            <svg
+              class="w-7 h-7"
+              fill="#000"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="flex justify-center items-center px-10 py-3 relative">
+        <div
+          id="collapseMenu"
+          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+        >
+          <button
+            id="toggleClose"
+            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-3.5 h-3.5 fill-black"
+              viewBox="0 0 320.591 320.591"
+            >
+              <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                data-original="#000000"
+              ></path>
+              <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                data-original="#000000"
+              ></path>
+            </svg>
+          </button>
+
+          <ul
+            class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[280px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+          >
+            <li class="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
+              <a href="javascript:void(0)"
+                ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+              </a>
+            </li>
+
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Who we are<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="aboutus.html"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    About the Foundation
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="board.html"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Board of Trustees
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Our Team
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Programmes<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Health
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Education
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Project Supported
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Grant Making<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Annual Grant
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Discretionary Grant
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Partnership
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Media Center<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Latests News
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Publications
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Videos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                >Contact Us</a
+              >
+            </li>
+            <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                >Donote</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="relative z-10 font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10"
+    >
+      <img
+        src="./iya/IMG-20250123-WA0032.jpg"
+        alt="Banner Image"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div
+        class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6"
+      >
+        <h2 class="sm:text-4xl text-2xl font-bold mb-6">
+          Annual Grants
+        </h2>
+        <p class="sm:text-lg text-base text-center text-gray-200">
+          Embark on unforgettable journeys. Book your dream vacation today!
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full mx-auto p-4">
+      <ul class="flex md:flex-row flex-col gap-2 w-max-md p-1">
+        <li
+          id="homeTab"
+          class="tab font-bold w-full text-center text-sm bg-emerald-600 text-white hover:bg-emerald-600 hover:text-white py-3 px-2 tracking-wide rounded-md cursor-pointer transition-all duration-300"
+        >
+          About Annual Grant
+        </li>
+        <li
+          id="settingTab"
+          class="tab text-gray-500 font-bold w-full text-center text-sm hover:bg-emerald-600 hover:text-white py-3 px-6 tracking-wide rounded-md cursor-pointer transition-all duration-300"
+        >
+          Eligibility
+        </li>
+        <li
+          id="profileTab"
+          class="tab text-gray-500 font-bold w-full text-center text-sm hover:bg-emerald-600 hover:text-white py-3 px-6 tracking-wide rounded-md cursor-pointer transition-all duration-300"
+        >
+          How to Apply 
+        </li>
+      </ul>
+
+      <div id="homeContent" class="tab-content w-full px-4 block mt-8">
+        <!-- <h4 class="text-lg font-bold text-gray-600">Home</h4> -->
+        <p class="text-md text-gray-600 mt-4">
+            About Annual Grants
+
+This is the primary funding scheme of the Foundation through which grants are awarded once annually after a careful screening process by Management and the Board of Trustees. Every year, a Call for Concept Notes is published, requesting qualified organisations based in Nigeria to apply for funds to implement projects in the Foundation’s focus areas of health and education.
+
+The Foundation’s annual grantmaking strategy is two-pronged
+
+Main Grant
+The Foundation supports initiatives across Nigeria by inviting NGOs to apply for funding to implement projects within its focus areas of health and education. Interventions under this grant can be implemented in any state in Nigeria.
+
+Taraba/Edo Community Funds
+Taraba and Edo states are the home states of the founder’s family. As a result, the Foundation annually supports special initiatives to be implemented in those states through its community fund schemes for grassroots organisations based and working in the states.
+
+The Community fund brings funding closer to the communities and makes it possible for less formally constituted organisations to receive support.
+
+The Community Fund provides small grants to small NGOs and CBOs to carry out innovative development activities geared towards addressing the social-economic challenges within rural communities. It also provides technical and institutional assistance as a way of addressing organisational development and enhancing community engagement in targeted social initiatives. Interventions under this grant can only be implemented in Taraba and Edo States by organisations registered and based there.
+
+The Taraba Community Fund was launched in February 2011, while the Edo Community Fund was launched in February 2012.
+            
+        </p>
+      </div>
+      <div
+        id="settingContent"
+        class="tab-content w-full px-4 mx-auto hidden mt-8"
+      >
+        <p class="text-md text-gray-600 mt-4">
+            Eligibility
+
+            Applicants for grants must satisfy the following conditions of eligibility: 
+            
+            Condition for Eligibility
+            
+            Be a registered Not-For-Profit organisation working in Nigeria (registration could be with the Corporate Affairs Commission, State Agency or other relevant bodies);
+            2. Have a verifiable organisational structure;
+            3. Proposals that promote the overall objectives of the Foundation;
+            4. Demonstrate community participation and government involvement;
+            5. Have a track record of engagement in similar or related activities;
+            6. Possess a valid financial audit report (maximum two (2) years).
+            Ineligible Applicants
+            
+            TYDF grants WILL NOT be extended to the following:
+            Individuals;
+            Organisations that are not legally registered in Nigeria;
+            A government entity;
+            Any organisation that has mismanaged TYDF funds in the past;
+            Political associations and institutions, or their subsidiaries and affiliates;
+            Organisations that advocate, promote, or espouse inhumane policies, illegal activities or terrorism;
+            Faith-based organisations whose proposed projects are of a religious nature.
+            Ineligible Activities and Excluded Costs
+            
+             Grant funds cannot be utilized for the following causes:
+            
+            Political campaigns
+            Religious or sectarian activities
+            Activities to be implemented outside Nigeria
+            Overseas training of any nature
+            Any activity that is illegal
+             
+        </p>
+      </div>
+      <div id="profileContent" class="tab-content w-full px-4 hidden mt-8">
+        <p class="text-md text-gray-600 mt-4">
+            The Foundation is not currently receiving application for Annual Grants. 
+            Applicants are generally required to Submit a concept Notes of 5 – 7 pages using the guidelines provided below:
+            
+            Concept Note Guidelines
+            
+            Applicant Information [1 page]
+            
+            Name of Organisation & Project Title
+            Heads of organisation and/or contact Persons
+            Mailing address including phone numbers & email addresses
+            How long the organisation has been in existence
+            List of similar projects executed; amount and sources of funds
+            Project Summary (2-3 pages)
+            
+            Project title
+            Thematic focus (Health or Education)
+            Where will the project be implemented – exact project location(s). Please provide name of LGA, Ward and GIS locations.
+            Specific problem to be solved & project duration
+            Goal and objectives of the project with clear targets
+            List and explain all activities to be implemented in the project
+            List and explain all expected outcomes of the Project
+            Identify key stakeholders from government and the beneficiary community and explain how they will be involved in the project.
+            Explain how the project will be sustained when the grant ends.
+            NB: Projects without clear sustainability plans will not be funded.
+            
+            Financial Summary (1-2 pages)
+            
+            Provide a reasonable estimated cost for all project activities
+            Include a cost for three (3) monitoring visits by TYDF staff members
+            Provide the total project budget and amount requested from TYDF
+            State all other sources of funding (if any) and when they will be secured.
+            State the budget of your organisation for the last two years.
+            Project Management (1 page)
+            
+            List all envisaged risks and explain how they will be mitigated
+            State how you and other stakeholders will monitor the project
+            Any other relevant information
+        </p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-emerald-50 py-10 px-4 sm:px-6 lg:px-8 mt-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <img src="./iya/logo/iya_logo1.png" alt="logo" class="w-24" />
+            <p class="text-gray-500 text-md font-medium mt-3">
+              The Iya Abbas Foundation is dedicated to transforming lives
+              through education, economic empowerment, and community
+              development.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-gray-800 font-medium mb-4 text-lg">Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Donate</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Sponsor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Fundraise</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Volunteer</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gray-800 font-medium mb-4 text-lg">Contacts</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >+234 (816) 723-6629</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >info@iyaabbasfoundation.org</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >123 Test Adderss, FCT ABuja,</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Nigeria</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="max-w-xl mx-auto">
+              <h4 class="text-lg mb-6 text-gray-800">Join our newsletter</h4>
+              <div class="bg-[#fff] flex p-1 rounded-full text-left">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full outline-none bg-transparent text-[15px] pl-4"
+                />
+                <button
+                  type="button"
+                  class="bg-emerald-500 text-white text-[15px] rounded-full px-4 py-2 tracking-wide"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 text-sm text-gray-400">
+          <p>&copy; Copyright 2024 Iyaabbasfoundation, All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>

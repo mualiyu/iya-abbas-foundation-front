@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TY Danjuma Foundation</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="//unpkg.com/alpinejs" defer></script>
+ 
+  <style>
+ body {
+    font-family: 'Poppins', sans-serif;
+  }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <!-- Header -->
+    <header class="shadow-md bg-white tracking-wide relative z-50">
+        <section
+          class="flex items-center lg:justify-center py-2.5 sm:px-10 px-4 border-gray-200 min-h-[70px]"
+        >
+          <!-- <div class='left-10 absolute z-50 bg-gray-100 flex items-center px-4 py-2.5 rounded max-lg:hidden'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904"
+            class="cursor-pointer fill-gray-400 mr-2.5 inline-block w-[18px] h-[18px]">
+            <path
+              d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
+            </path>
+          </svg>
+          <input type='text' placeholder='Search...' class="outline-none bg-transparent w-full text-sm" />
+        </div> -->
+  
+          <a href="javascript:void(0)" class="max-sm:hidden"
+            ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+          </a>
+        
+          <div id="toggleOpen" class="flex items-center justify-between w-full  lg:hidden">
+              <a href="javascript:void(0)" class="hidden max-sm:block"
+              ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-24" />
+            </a>
+            <button class="ml-[60px]">
+              <svg
+                class="w-7 h-7"
+                fill="#000"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </section>
+  
+        <div class="flex justify-center items-center px-10 py-3 relative">
+          <div
+            id="collapseMenu"
+            class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+          >
+            <button
+              id="toggleClose"
+              class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-3.5 h-3.5 fill-black"
+                viewBox="0 0 320.591 320.591"
+              >
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                  data-original="#000000"
+                ></path>
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                  data-original="#000000"
+                ></path>
+              </svg>
+            </button>
+  
+            <ul
+              class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[280px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+            >
+              <li class="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
+                <a href="javascript:void(0)"
+                  ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+                </a>
+              </li>
+  
+              <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+                <button
+  
+                  onclick="toggleDropdown(this)"
+                  class="hover:text-emerald hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >Who we are<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+              </button>
+                <ul
+                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+                >
+                  <li class="border-b py-3">
+                    <a
+                      href="aboutus.html"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      About the Foundation
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="board.html"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Board of Trustees
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Our Team
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+                <button
+                onclick="toggleDropdown(this)"
+                 
+                  class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >Programmes<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+                >
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Health
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Education
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Project Supported
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+                <button
+                onclick="toggleDropdown(this)"
+                  
+                  class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >Grant Making<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+                >
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Annual Grant
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Discretionary Grant
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Partnership
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+                <button
+                onclick="toggleDropdown(this)"
+                  class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >Media Center<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    class="ml-1 inline-block"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16"
+                      data-original="#000000"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+                >
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Latests News
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Publications
+                    </a>
+                  </li>
+                  <li class="border-b py-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                    >
+                      Videos
+                    </a>
+                  </li>
+                </ul>
+              </li>
+  
+              <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+                <a
+                  href="javascript:void(0)"
+                  class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                  >Donote</a
+                >
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+      </header>
+ 
+
+
+ <!-- carousel -->
+  <section class="relative">
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/iya/banner-06-300x162.jpg" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5);">
+            <div class="bg-gray-900/50 p-6 rounded-md" style="text-align: center; color: white;">
+              <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">Empowering Communities</h1>
+              <p style="font-size: 1.25rem;">We are committed to improving lives through sustainable development.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/iya/BG-Img-07-free-img.jpg" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5);">
+            <div style="text-align: center; color: white;">
+              <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">Health Initiatives</h1>
+              <p style="font-size: 1.25rem;">Improving access to quality healthcare services.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/iya/home-image-08-300x197.jpg" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.5);">
+            <div style="text-align: center; color: white;">
+              <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">Education Programs</h1>
+              <p style="font-size: 1.25rem;">Empowering communities through education.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="carousel-control-prev" onclick="prevSlide()" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel-control-next" onclick="nextSlide()" aria-label="Next slide">&#10095;</button>
+      
+      <div class="carousel-indicators">
+        <button class="indicator active" onclick="goToSlide(0)" aria-label="Go to slide 1"></button>
+        <button class="indicator" onclick="goToSlide(1)" aria-label="Go to slide 2"></button>
+        <button class="indicator" onclick="goToSlide(2)" aria-label="Go to slide 3"></button>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+  <div class="font-[sans-serif] py-4 mt-10">
+    <h1 class="text-center pb-6 text-gray-800 font-semibold text-[30px]">OUR IMPACT</h1>
+    <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-x-6 gap-y-12 divide-x divide-gray-300">
+        
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-emerald-600 w-10 inline-block" viewBox="0 0 512 512">
+          <path d="M437 268.152h-50.118c-6.821 0-13.425.932-19.71 2.646-12.398-24.372-37.71-41.118-66.877-41.118h-88.59c-29.167 0-54.479 16.746-66.877 41.118a74.798 74.798 0 0 0-19.71-2.646H75c-41.355 0-75 33.645-75 75v80.118c0 24.813 20.187 45 45 45h422c24.813 0 45-20.187 45-45v-80.118c0-41.355-33.645-75-75-75zm-300.295 36.53v133.589H45c-8.271 0-15-6.729-15-15v-80.118c0-24.813 20.187-45 45-45h50.118c4.072 0 8.015.553 11.769 1.572a75.372 75.372 0 0 0-.182 4.957zm208.59 133.589h-178.59v-133.59c0-24.813 20.187-45 45-45h88.59c24.813 0 45 20.187 45 45v133.59zm136.705-15c0 8.271-6.729 15-15 15h-91.705v-133.59a75.32 75.32 0 0 0-.182-4.957 44.899 44.899 0 0 1 11.769-1.572H437c24.813 0 45 20.187 45 45v80.119z" data-original="#000000" />
+          <path d="M100.06 126.504c-36.749 0-66.646 29.897-66.646 66.646-.001 36.749 29.897 66.646 66.646 66.646 36.748 0 66.646-29.897 66.646-66.646s-29.897-66.646-66.646-66.646zm-.001 103.292c-20.207 0-36.646-16.439-36.646-36.646s16.439-36.646 36.646-36.646 36.646 16.439 36.646 36.646-16.439 36.646-36.646 36.646zM256 43.729c-49.096 0-89.038 39.942-89.038 89.038s39.942 89.038 89.038 89.038 89.038-39.942 89.038-89.038c0-49.095-39.942-89.038-89.038-89.038zm0 148.076c-32.554 0-59.038-26.484-59.038-59.038 0-32.553 26.484-59.038 59.038-59.038s59.038 26.484 59.038 59.038c0 32.554-26.484 59.038-59.038 59.038zm155.94-65.301c-36.748 0-66.646 29.897-66.646 66.646.001 36.749 29.898 66.646 66.646 66.646 36.749 0 66.646-29.897 66.646-66.646s-29.897-66.646-66.646-66.646zm0 103.292c-20.206 0-36.646-16.439-36.646-36.646.001-20.207 16.44-36.646 36.646-36.646 20.207 0 36.646 16.439 36.646 36.646s-16.439 36.646-36.646 36.646z" data-original="#000000" />
+        </svg>
+        <h3 class="text-xl font-extrabold text-emerald-600 mt-5">$41.5 Million</h3>
+        <p class="text-base text-gray-800 font-semibold mt-3">Awarded in Grants</p>
+      </div>
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-emerald-600 w-10 inline-block" viewBox="0 0 512 512">
+          <path fill-rule="evenodd" d="M64.217 333.491h41.421c5.508 0 10 4.492 10 10v97.833c0 5.508-4.492 10-10 10H64.217c-5.508 0-10-4.492-10-10v-97.833c0-5.508 4.492-10 10-10zm155.471-61.737h-41.422c-5.508 0-10 4.492-10 10v159.571c0 5.508 4.492 10 10 10h41.422c5.508 0 10-4.492 10-10V281.754c0-5.508-4.493-10-10-10zm114.049-64.466h-41.421c-5.508 0-10 4.492-10 10v224.036c0 5.508 4.492 10 10 10h41.421c5.508 0 10-4.492 10-10V217.288c-.001-5.507-4.493-10-10-10zm72.625-57.992h41.421c5.508 0 10 4.492 10 10v282.028c0 5.508-4.492 10-10 10h-41.421c-5.508 0-10-4.492-10-10V159.296c0-5.508 4.492-10 10-10zm2.707-106.018a7.98 7.98 0 0 1-.812-15.938l49.121-2.666a7.98 7.98 0 0 1 8.307 9.094l.006.001-7.088 48.68a7.986 7.986 0 0 1-15.812-2.25l3.878-26.632C385.642 108.019 321.72 152.702 257.158 189.5c-69.131 39.402-138.98 69.744-206.779 93.355a7.976 7.976 0 0 1-5.25-15.062c66.943-23.313 135.906-53.269 204.154-92.167 63.527-36.208 126.449-80.188 186.56-133.799zM45.262 481.873h421.477c5.508 0 10 4.492 10 10v3.193c0 5.508-4.492 10-10 10H45.262c-5.508 0-10-4.492-10-10v-3.193c0-5.508 4.492-10 10-10zM139.587 6.935c-48.325 0-87.5 39.175-87.5 87.5s39.175 87.5 87.5 87.5 87.5-39.175 87.5-87.5c-.001-48.325-39.176-87.5-87.5-87.5zm-8 32.13v5.279c-5.474 1.183-10.606 3.537-14.768 6.92-6.626 5.387-10.827 13.21-10.353 22.965.476 9.817 5.372 16.4 12.186 20.849 5.887 3.844 13.093 5.827 19.733 6.917 5.206.855 10.757 2.201 14.95 4.733 3.261 1.969 5.71 4.838 6.23 9.127.072.595.111 1.013.117 1.26.08 3.359-1.536 5.926-3.962 7.767-3.135 2.379-7.564 3.785-12.005 4.324a33.57 33.57 0 0 1-3.172.254c-5.25.126-10.424-1.156-14.458-3.842-3.274-2.18-5.775-5.367-6.818-9.552a7.982 7.982 0 0 0-15.5 3.812c2.094 8.399 7.044 14.749 13.505 19.052 4.252 2.831 9.164 4.736 14.315 5.711v5.165a8 8 0 1 0 16-.001v-5.01c6.309-1.038 12.699-3.388 17.758-7.226 6.302-4.782 10.494-11.632 10.275-20.829a29.17 29.17 0 0 0-.179-2.76c-1.22-10.052-6.653-16.591-13.856-20.94-6.27-3.786-13.768-5.668-20.637-6.796-4.832-.793-9.912-2.13-13.607-4.543-2.767-1.806-4.752-4.416-4.937-8.224-.202-4.157 1.615-7.512 4.478-9.84 2.281-1.854 5.196-3.144 8.362-3.781a22.978 22.978 0 0 1 10.115.244c5.278 1.338 10.083 4.817 12.614 10.845a7.997 7.997 0 0 0 10.469 4.281 7.997 7.997 0 0 0 4.281-10.469c-4.701-11.196-13.65-17.664-23.489-20.158a37.3 37.3 0 0 0-1.646-.377v-5.161a8 8 0 1 0-16.001.004z" clip-rule="evenodd" data-original="#000000" />
+        </svg>
+        <h3 class="text-xl font-extrabold text-emerald-600 mt-5">Over 340 Projects</h3>
+        <p class="text-base text-gray-800 font-semibold mt-3">Implemented</p>
+      </div>
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-emerald-600 w-10 inline-block" viewBox="0 0 28 28">
+          <path d="M18.56 16.94h-3.12l.65-2.16a2.58 2.58 0 0 0-1.66-3.21 1.41 1.41 0 0 0-1.81 1l-.1.42a8.61 8.61 0 0 1-2.26 4l-.57.56a1.56 1.56 0 0 0-1.21-.59h-.73a1.56 1.56 0 0 0-1.56 1.54v6.44a1.56 1.56 0 0 0 1.56 1.56h.73a1.55 1.55 0 0 0 1.33-.76l.14.07a6.55 6.55 0 0 0 2.91.69h3.59a3.58 3.58 0 0 0 3-1.6 6.34 6.34 0 0 0 1.07-3.53v-2.49a1.94 1.94 0 0 0-1.96-1.94zm-9.56 8a.56.56 0 0 1-.56.56h-.69a.56.56 0 0 1-.56-.56V18.5a.56.56 0 0 1 .56-.56h.73a.56.56 0 0 1 .52.56zm10.5-3.57a5.38 5.38 0 0 1-.9 3 2.59 2.59 0 0 1-2.15 1.15h-3.59a5.53 5.53 0 0 1-2.46-.58l-.4-.2V18.6l.92-.92a9.63 9.63 0 0 0 2.53-4.46l.1-.41a.43.43 0 0 1 .2-.26.4.4 0 0 1 .32 0 1.58 1.58 0 0 1 1 2l-.84 2.81a.5.5 0 0 0 .08.44.48.48 0 0 0 .4.2h3.79a.94.94 0 0 1 .94.94zM11 7.3l-.32 1.85a1.09 1.09 0 0 0 .44 1.09 1.11 1.11 0 0 0 .65.22 1.18 1.18 0 0 0 .52-.13L14 9.45l1.67.88a1.1 1.1 0 0 0 1.17-.09 1.09 1.09 0 0 0 .44-1.08L17 7.3 18.31 6a1.1 1.1 0 0 0 .29-1.14 1.12 1.12 0 0 0-.9-.76l-1.87-.27L15 2.12a1.12 1.12 0 0 0-2 0l-.83 1.69-1.87.27a1.12 1.12 0 0 0-.9.76A1.1 1.1 0 0 0 9.69 6zm-.6-2.23 2.13-.31a.49.49 0 0 0 .47-.27l1-1.93a.11.11 0 0 1 .2 0l1 1.93a.49.49 0 0 0 .38.27l2.13.31a.12.12 0 0 1 .09.08.11.11 0 0 1 0 .11l-1.54 1.5a.53.53 0 0 0-.15.45l.37 2.11a.09.09 0 0 1-.05.11.1.1 0 0 1-.12 0l-1.9-1a.47.47 0 0 0-.46 0l-1.91 1a.09.09 0 0 1-.11 0 .09.09 0 0 1-.05-.11l.37-2.11a.53.53 0 0 0-.15-.45l-1.54-1.5a.11.11 0 0 1 0-.11.12.12 0 0 1-.12-.08zm-3.06 8.18a1 1 0 0 0 1-1.19l-.27-1.52 1.12-1.09a1 1 0 0 0-.56-1.73L7.1 7.5l-.69-1.39a1.05 1.05 0 0 0-1.82 0L3.9 7.5l-1.53.22a1 1 0 0 0-.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12zm-1.84-1.9a.46.46 0 0 0-.23.06l-1.63.82.36-1.78a.53.53 0 0 0-.2-.45L2.51 8.71l1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29L7.2 10a.53.53 0 0 0-.15.45l.29 1.8-1.61-.84a.46.46 0 0 0-.23-.06zm20.95-2.94a1 1 0 0 0-.82-.69L24.1 7.5l-.69-1.39a1.05 1.05 0 0 0-1.82 0L20.9 7.5l-1.53.22a1 1 0 0 0-.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12 1 1 0 0 0 1-1.19l-.27-1.52 1.11-1.09a1 1 0 0 0 .27-1.04zM24.2 10a.53.53 0 0 0-.15.45l.29 1.8-1.61-.84a.47.47 0 0 0-.46 0l-1.63.82.36-1.78a.53.53 0 0 0-.2-.45l-1.29-1.29 1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29z" data-name="Layer 2" data-original="#000000" />
+        </svg>
+        <h3 class="text-xl font-extrabold text-emerald-600 mt-5">Across 36 States</h3>
+        <p class="text-base text-gray-800 font-semibold mt-3">
+            and the FCT</p>
+      </div>
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-emerald-600 w-10 inline-block" viewBox="0 0 512 512">
+          <path d="M477.797 290.203c0 59.244-23.071 114.942-64.963 156.834S315.244 512 256 512s-114.942-23.071-156.834-64.963-64.963-97.59-64.963-156.834c0-39.621 10.579-78.512 30.595-112.468 19.419-32.944 47.178-60.48 80.276-79.63 7.646-4.427 17.437-1.814 21.861 5.836 4.426 7.648 1.813 17.437-5.836 21.861-53.882 31.175-88.951 87.036-94.189 148.4H84.6c8.837 0 16 7.163 16 16s-7.163 16-16 16H66.884C74.594 398.12 148.083 471.609 240 479.319v-17.717c0-8.837 7.163-16 16-16s16 7.163 16 16v17.717c91.917-7.71 165.406-81.199 173.116-173.116h-17.717c-8.837 0-16-7.163-16-16s7.163-16 16-16h17.69c-5.238-61.364-40.307-117.227-94.19-148.4-7.648-4.425-10.262-14.212-5.836-21.861 4.425-7.648 14.214-10.261 21.861-5.836 33.098 19.148 60.857 46.685 80.277 79.63 20.016 33.955 30.596 72.846 30.596 112.467zm-253.173-220.2 15.259-15.259-.258 71.899c-.031 8.837 7.106 16.025 15.942 16.058h.059c8.81 0 15.967-7.126 15.999-15.942l.259-72.248 15.492 15.492c3.124 3.124 7.219 4.687 11.313 4.687s8.189-1.563 11.313-4.687c6.248-6.248 6.248-16.379 0-22.627L267.313 4.687c-6.248-6.248-16.379-6.248-22.627 0l-42.689 42.689c-6.248 6.248-6.248 16.379 0 22.627s16.379 6.248 22.627 0zM272 174.358v64.628c16.74 5.24 29.977 18.478 35.218 35.217h50.493c8.837 0 16 7.163 16 16s-7.163 16-16 16h-50.493c-6.823 21.795-27.202 37.655-51.218 37.655-29.585 0-53.654-24.069-53.654-53.655 0-24.015 15.86-44.394 37.654-51.217v-64.628c0-8.837 7.163-16 16-16s16 7.163 16 16zm5.655 115.845c0-11.94-9.715-21.654-21.655-21.654s-21.654 9.714-21.654 21.654 9.714 21.655 21.654 21.655 21.655-9.714 21.655-21.655z" data-original="#000000" />
+        </svg>
+        <h3 class="text-xl font-extrabold text-emerald-600 mt-5">More than 10 Million</h3>
+        <p class="text-base text-gray-800 font-semibold mt-3">People reached</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- grant making -->
+  <section
+  class="light py-14 md:py-24 bg-white  text-zinc-900  relative overflow-hidden z-10"
+>
+  <div class="container px-4 mx-auto">
+    <div
+      class="flex max-w-3xl justify-center text-center mb-6 md:mb-12 mx-auto"
+    >
+      <div>
+        <h2 class="text-2xl font-bold leading-none md:text-[30px] mb-6">
+            GRANTMAKING
+        </h2>
+        <p class="opacity-90 mb-4">
+          Assumenda non repellendus distinctio nihil dicta sapiente,
+          quibusdam maiores, illum at, aliquid blanditiis eligendi qui.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 mx-0 mb-6 md:mb-0">
+      <div class="col-span-12 md:col-span-6 relative z-20 p-0 md:order-2">
+        <div
+          class="bg-center bg-no-repeat bg-cover h-full min-h-[350px] w-full md:w-[50vw] -z-10 overflow-hidden"
+          style="
+            background-image: url(https://cdn.easyfrontend.com/pictures/featured/feature4.jpg);
+          "
+        ></div>
+      </div>
+      <div class="col-span-12 md:col-span-6 relative z-20 p-0">
+        <div class="p-6">
+          <div class="mb-6">
+            <span class="block text-[45px] text-emerald-600 leading-none">5,231</span>
+            <span class="text-base uppercase block mt-1"
+              >Annual Grants</span
+            >
+          </div>
+          <p class="mb-6 lg:mb-12">
+            The Foundation supports initiatives across Nigeria by inviting NGOs to apply for funding to implement projects within its focus areas of Health and Education. Interventions under this grant can be implemented in any state in Nigeria.
+          </p>
+          <div>
+            <a
+              href="#"
+              class="font-bold text-sm uppercase bg-transparent border-0 hover:text-emerald-600"
+            >
+              Learn more <i class="fas fa-long-arrow-alt-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 mx-0 mb-6 md:mb-0">
+      <div class="col-span-12 md:col-span-6 relative z-20 p-0">
+        <div
+          class="bg-center bg-no-repeat bg-cover h-full min-h-[350px] w-full md:w-[50vw] -z-10 overflow-hidden float-right"
+          style="
+            background-image: url(https://cdn.easyfrontend.com/pictures/featured/feature7.jpg);
+          "
+        ></div>
+      </div>
+      <div class="col-span-12 md:col-span-6 relative z-20 p-0">
+        <div class="p-6 md:ml-4">
+          <div class="mb-6">
+            <span class="block text-[45px] text-emerald-600 leading-none">6,571</span>
+            <span class="text-base uppercase block mt-1"
+              >Discretionary Grants</span
+            >
+          </div>
+          <p class="mb-6 lg:mb-12">
+            The Grant is administered all year-round to facilitate rapid response to people facing humanitarian emergencies in Nigeria and for interventions determined to be within the Foundation’s focus areas.
+          </p>
+          <div>
+            <a
+              href="#"
+              class="font-bold text-sm uppercase bg-transparent border-0 hover:text-emerald-600"
+            >
+              Learn more <i class="fas fa-long-arrow-alt-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+      class=" py-14 md:py-24 text-stone-800 bg-white overflow-hidden"
+    >
+      <div class="container px-20 md:px-8 xl:px-28">
+        <div class="grid grid-cols-12 justify-center">
+          <div
+            class="col-span-12 lg:col-span-8 lg:col-start-3 lg:col-end-11 text-center"
+          >
+            <h2 class="text-[32px] lg:text-[30px] leading-none font-bold mb-4">
+                News & Updates
+            </h2>
+      
+          </div>
+        </div>
+
+        <div class="grid grid-cols-6 mt-12 gap-6">
+          <!-- blog item -->
+          <div class="col-span-6 md:col-span-3 lg:col-span-2 mb-3">
+            <article class="rounded-lg">
+              <div class="relative">
+                <img
+                  src="https://cdn.easyfrontend.com/pictures/blog/blog_7.jpg"
+                  alt=""
+                  class="h-auto w-full rounded-lg shadow-lg dark:shadow-none"
+                />
+                <div
+                  class="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black bg-white  bg-opacity-80  rounded-lg"
+                >
+                  6<br />Nov<br />2016
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="font-light text-sm leading-6 mb-2">
+                  By <a href="" class="text-emerald-600">David Miller</a>
+                </p>
+                <h4 class="font-medium text-2xl">
+                  Nice Workplace For Brainstorming Meetings
+                </h4>
+                <p class="opacity-60 mt-3 mb-6">
+                  Unique side projects are the best place to innovate specially
+                  at your work.
+                </p>
+                <a
+                  href=""
+                  class="bg-transparent hover:bg-emerald-600 border border-emerald-600 hover:text-white py-2 px-5 rounded transition"
+                  >Read More</a
+                >
+              </div>
+            </article>
+          </div>
+          <!-- blog item -->
+          <div class="col-span-6 md:col-span-3 lg:col-span-2 mb-3">
+            <article class="rounded-lg">
+              <div class="relative">
+                <img
+                  src="https://cdn.easyfrontend.com/pictures/blog/blog_6.jpg"
+                  alt=""
+                  class="h-auto w-full rounded-lg shadow-lg dark:shadow-none"
+                />
+                <div
+                  class="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black bg-white bg-opacity-80  rounded-lg"
+                >
+                  29<br />Feb<br />2016
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="font-light text-sm leading-6 mb-2">
+                  By <a href="" class="text-emerald-600">Shawn Paul</a>
+                </p>
+                <h4 class="font-medium text-2xl">
+                  My Adventure in Alps,The Heighest!
+                </h4>
+                <p class="opacity-60 mt-3 mb-6">
+                  Being creative within the constraints of client briefs,
+                  budgets and timelines.
+                </p>
+                <a
+                  href=""
+                  class="bg-transparent hover:bg-emerald-600 border border-emerald-600 hover:text-white py-2 px-5 rounded transition"
+                  >Read More</a
+                >
+              </div>
+            </article>
+          </div>
+          <!-- blog item -->
+          <div class="col-span-6 md:col-span-3 lg:col-span-2 mb-3">
+            <article class="rounded-lg">
+              <div class="relative">
+                <img
+                  src="https://cdn.easyfrontend.com/pictures/blog/blog_8.jpg"
+                  alt=""
+                  class="h-auto w-full rounded-lg shadow-lg "
+                />
+                <div
+                  class="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black bg-white dbg-opacity-80  rounded-lg"
+                >
+                  26<br />Oct<br />2016
+                </div>
+              </div>
+              <div class="p-3">
+                <p class="font-light text-sm leading-6 mb-2">
+                  By <a href="" class="text-emerald-600">Elleca Perry</a>
+                </p>
+                <h4 class="font-medium text-2xl">
+                  How I Escape My Mind By Listening To Music
+                </h4>
+                <p class="opacity-60 mt-3 mb-6">
+                  Assumenda non repellendus distinctio nihil dicta sapiente,
+                  quibusdam maiores.
+                </p>
+                <a
+                  href=""
+                  class="bg-transparent hover:bg-emerald-600 border border-emerald-600 hover:text-white py-2 px-5 rounded transition"
+                  >Read More</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-14">
+          <a
+            href=""
+            class="bg-emerald-600 hover:bg-opacity-90 text-white font-bold border border-emerald-600 py-3 px-7 rounded transition"
+            >Load All Posts</a
+          >
+        </div>
+      </div>
+    </section>
+
+
+  <footer class="bg-emerald-50 py-10 px-4 sm:px-6 lg:px-8 font-[sans-serif]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <img src="./iya/logo/iya_logo1.png" alt="ReadymadeUI" class="w-24" />
+          <p class="text-gray-400 text-sm mt-3">The Iya Abbas Foundation is dedicated to transforming lives through education, economic empowerment, and community development.</p>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-medium mb-4 text-lg">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">Donate</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">Sponsor</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">Fundraise</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">Volunteer</a></li>
+          
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-gray-800 font-medium mb-4 text-lg">Contacts</h3>
+          <ul class="space-y-2">
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">+234 (816) 723-6629</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">info@iyaabbasfoundation.org</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">123 Test Adderss, FCT ABuja,</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white text-[13px]">Nigeria</a></li>
+          </ul>
+        </div>
+        <div>
+            <div class="max-w-xl mx-auto ">
+                <h4 class="text-lg mb-6 text-gray-800">Join our newsletter </h4>
+                <div class="bg-[#fff] flex p-1 rounded-full text-left">
+                  <input type='email' placeholder='Enter your email' class="w-full outline-none bg-transparent text-[15px] pl-4" />
+                  <button type='button'
+                    class="bg-emerald-500 text-white text-[15px] rounded-full px-4 py-2 tracking-wide">Subscribe</button>
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="mt-16 text-sm text-gray-400">
+        <p>&copy; Copyright 2024 Iyaabbasfoundation, All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+<script src="index.js"></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annual Grants</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="shadow-md bg-white tracking-wide relative z-50">
+      <section
+        class="flex items-center lg:justify-center py-2.5 sm:px-10 px-4 border-gray-200 min-h-[70px]"
+      >
+        <!-- <div class='left-10 absolute z-50 bg-gray-100 flex items-center px-4 py-2.5 rounded max-lg:hidden'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904"
+            class="cursor-pointer fill-gray-400 mr-2.5 inline-block w-[18px] h-[18px]">
+            <path
+              d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
+            </path>
+          </svg>
+          <input type='text' placeholder='Search...' class="outline-none bg-transparent w-full text-sm" />
+        </div> -->
+
+        <a href="javascript:void(0)" class="max-sm:hidden"
+          ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+        </a>
+
+        <div
+          id="toggleOpen"
+          class="flex items-center justify-between w-full lg:hidden"
+        >
+          <a href="javascript:void(0)" class="hidden max-sm:block"
+            ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-24" />
+          </a>
+          <button class="ml-[60px]">
+            <svg
+              class="w-7 h-7"
+              fill="#000"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="flex justify-center items-center px-10 py-3 relative">
+        <div
+          id="collapseMenu"
+          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50"
+        >
+          <button
+            id="toggleClose"
+            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-3.5 h-3.5 fill-black"
+              viewBox="0 0 320.591 320.591"
+            >
+              <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                data-original="#000000"
+              ></path>
+              <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                data-original="#000000"
+              ></path>
+            </svg>
+          </button>
+
+          <ul
+            class="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[280px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+          >
+            <li class="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
+              <a href="javascript:void(0)"
+                ><img src="./iya/logo/iya_logo1.png" alt="logo" class="w-36" />
+              </a>
+            </li>
+
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Who we are<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="aboutus.html"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    About the Foundation
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="board.html"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Board of Trustees
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Our Team
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Programmes<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Health
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Education
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Project Supported
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Grant Making<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Annual Grant
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Discretionary Grant
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Partnership
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="group max-lg:border-b max-lg:px-3 max-lg:py-3 relative">
+              <button
+                onclick="toggleDropdown(this)"
+                class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+              >
+                Media Center<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  class="ml-1 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                    data-name="16"
+                    data-original="#000000"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="absolute top-5 max-lg:top-8 left-0 z-50 block space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[230px] group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-[400ms]"
+              >
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Latests News
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Publications
+                  </a>
+                </li>
+                <li class="border-b py-3">
+                  <a
+                    href="javascript:void(0)"
+                    class="hover:text-emerald-600 hover:fill-emerald-600 text-gray-800 text-[15px] flex items-center"
+                  >
+                    Videos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                >Contact Us</a
+              >
+            </li>
+            <li class="max-lg:border-b max-lg:px-3 max-lg:py-3">
+              <a
+                href="javascript:void(0)"
+                class="hover:text-emerald-600 text-gray-800 text-[15px] block"
+                >Donote</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="relative z-10 font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10"
+    >
+      <img
+        src="./iya/IMG-20250123-WA0032.jpg"
+        alt="Banner Image"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div
+        class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6"
+      >
+        <h2 class="sm:text-4xl text-2xl font-bold mb-6">
+        Partnership
+        </h2>
+        <p class="sm:text-lg text-base text-center text-gray-200">
+          Embark on unforgettable journeys. Book your dream vacation today!
+        </p>
+      </div>
+    </div>
+
+    <section class="py-24 relative">
+        <div class="w-full max-w-6xl px-4 mx-auto">
+          <div class="w-full items-start gap-20 grid lg:grid-cols-2 grid-cols-1">
+            <div>
+              
+              <h1 class="mt-4 text-xl font-semibold">
+                Partnership & Collaboration
+              </h1>
+              <p class="text-base leading-relaxed opacity-70 mt-5">
+                Established in 2019 by the Iya Abbas family, the Iya Abbas
+                Foundation is a private, independent philanthropic organization
+                dedicated to enhancing the quality of life for Nigerians. Based in
+                Adamawa and Abuja, FCT, the foundation supports health and
+                education initiatives implemented by local NGOs. The Iya Abbas
+                Foundation partners with organizations like Sarauniyah Aid
+                Foudation (SAF) to deliver vital services, including free medical
+                outreach programs for thousands of underserved individuals. By
+                collaborating with committed organizations, the foundation
+                continues to make a profound impact on the communities it serves.
+              </p>
+            </div>
+            <div
+              class="w-full flex-col justify-start lg:items-start items-center gap-5 inline-flex"
+            >
+              <!-- Accordion Item 1 -->
+              <div class="border-b border-slate-200">
+                <button
+                  onclick="toggleAccordion(1)"
+                  class="w-full flex justify-between items-center py-3 text-slate-800"
+                >
+                  <span>Mission</span>
+                  <span
+                    id="icon-1"
+                    class="text-slate-800 transition-transform duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  id="content-1"
+                  class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                >
+                  <div class="pb-5 text-sm text-slate-500">
+                    The Iya Abbas Foundation is committed to enhancing the quality
+                    of life of Nigerians by supporting initiatives that improve
+                    access to health and educational opportunities and
+                    entrepreneurship
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Accordion Item 2 -->
+              <div class="border-b border-slate-200">
+                <button
+                  onclick="toggleAccordion(2)"
+                  class="w-full flex justify-between items-center py-2 text-slate-800"
+                >
+                  <span>Vision</span>
+                  <span
+                    id="icon-2"
+                    class="text-slate-800 transition-transform duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  id="content-2"
+                  class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                >
+                  <div class="pb-5 text-sm text-slate-500">
+                    To contribute to building a Nigeria where all citizens have
+                    access to affordable quality health care, education and equal
+                    opportunities to realize their potential.
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Accordion Item 3 -->
+              <div class="border-b border-slate-200">
+                <button
+                  onclick="toggleAccordion(3)"
+                  class="w-full flex justify-between items-center py-2 text-slate-800"
+                >
+                  <span>Aims and Objectives</span>
+                  <span
+                    id="icon-3"
+                    class="text-slate-800 transition-transform duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  id="content-3"
+                  class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+                >
+                  <div class="pb-5 text-sm text-slate-500">
+                    <ul class="list-disc list-outside">
+                      <li class="text-gray-500">
+                        <span class="text-gray-800 font-semibold"
+                          >Empowerment for Growth:</span
+                        >
+                        Supporting the development of entrepreneurial skills among
+                        youths, women, and underprivileged individuals to drive
+                        economic progress.
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Education for All:</span
+                        >
+                        Facilitating scholarships for disadvantaged students and
+                        encouraging out-of-school children to return to education.
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Community Support:</span
+                        >
+                        Facilitating scholarships for disadvantaged students and
+                        encouraging out-of-school children to return to
+                        education.Organizing programs to provide care and
+                        assistance for orphans, vulnerable children, widows, and
+                        other marginalized groups.
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Empowering the Vulnerable:</span
+                        >
+                        Providing training and financial aid for elderly widows
+                        and less privileged individuals.
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Information Exchange:</span
+                        >
+                        Promoting collaboration and sharing of knowledge with
+                        relevant governmental institutions and NGOs at local and
+                        international levels
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Educational Endowments:</span
+                        >
+                        Establishing endowments and scholarships to support
+                        students from financially challenged backgrounds
+                      </li>
+                      <li class="text-gray-500 mt-2">
+                        <span class="text-gray-800 font-semibold"
+                          >Holistic Assistance:</span
+                        >Catering to the diverse needs of women, children, youths,
+                        and seniors in the community.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- contact us -->
+<form class="font-[sans-serif] max-w-4xl mx-auto">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="relative flex items-center">
+        <input type="text" placeholder="First Name"
+          class="px-4 py-3 bg-[#f0f1f2] focus:bg-transparent text-black w-full text-sm border outline-[#007bff] rounded transition-all" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+          viewBox="0 0 24 24">
+          <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+          <path
+            d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+            data-original="#000000"></path>
+        </svg>
+      </div>
+
+      <div class="relative flex items-center">
+        <input type="text" placeholder="Last Name"
+          class="px-4 py-3 bg-[#f0f1f2] focus:bg-transparent text-black w-full text-sm border outline-[#007bff] rounded transition-all" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+          viewBox="0 0 24 24">
+          <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+          <path
+            d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+            data-original="#000000"></path>
+        </svg>
+      </div>
+
+      <div class="relative flex items-center">
+        <input type="email" placeholder="Email"
+          class="px-4 py-3 bg-[#f0f1f2] focus:bg-transparent text-black w-full text-sm border outline-[#007bff] rounded transition-all" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+          viewBox="0 0 682.667 682.667">
+          <defs>
+            <clipPath id="a" clipPathUnits="userSpaceOnUse">
+              <path d="M0 512h512V0H0Z" data-original="#000000"></path>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+            <path fill="none" stroke-miterlimit="10" stroke-width="40"
+              d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
+              data-original="#000000"></path>
+            <path
+              d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
+              data-original="#000000"></path>
+          </g>
+        </svg>
+      </div>
+
+      <div class="relative flex items-center">
+        <input type="password" placeholder="Password"
+          class="px-4 py-3 bg-[#f0f1f2] focus:bg-transparent text-black w-full text-sm border outline-[#007bff] rounded transition-all" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
+          class="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128">
+          <path
+            d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z"
+            data-original="#000000"></path>
+        </svg>
+      </div>
+    </div>
+
+    <button type="button"
+      class="mt-8 px-6 py-2.5 text-sm w-full bg-[#007bff] hover:bg-[#006bff] text-white rounded transition-all">Submit</button>
+  </form>
+
+    <!-- footer -->
+    <footer class="bg-emerald-50 py-10 px-4 sm:px-6 lg:px-8 mt-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <img src="./iya/logo/iya_logo1.png" alt="logo" class="w-24" />
+            <p class="text-gray-500 text-md font-medium mt-3">
+              The Iya Abbas Foundation is dedicated to transforming lives
+              through education, economic empowerment, and community
+              development.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-gray-800 font-medium mb-4 text-lg">Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Donate</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Sponsor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Fundraise</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Volunteer</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gray-800 font-medium mb-4 text-lg">Contacts</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >+234 (816) 723-6629</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >info@iyaabbasfoundation.org</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >123 Test Adderss, FCT ABuja,</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-gray-500 hover:text-white text-[13px]"
+                  >Nigeria</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="max-w-xl mx-auto">
+              <h4 class="text-lg mb-6 text-gray-800">Join our newsletter</h4>
+              <div class="bg-[#fff] flex p-1 rounded-full text-left">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full outline-none bg-transparent text-[15px] pl-4"
+                />
+                <button
+                  type="button"
+                  class="bg-emerald-500 text-white text-[15px] rounded-full px-4 py-2 tracking-wide"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 text-sm text-gray-400">
+          <p>&copy; Copyright 2024 Iyaabbasfoundation, All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>
