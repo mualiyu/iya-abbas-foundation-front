@@ -148,3 +148,42 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     }))
 })
+
+
+// latest news and index pulication slide
+const carousel = document.getElementById("carousel");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const indicator = document.querySelectorAll("[data-index]");
+
+let index = 0;
+const totalSlides = document.querySelectorAll("#carousel > div").length;
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+  indicator.forEach((dot, i) => dot.classList.toggle("opacity-100", i === index));
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % totalSlides;
+  updateCarousel();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+});
+
+indicator.forEach(dot => {
+  dot.addEventListener("click", () => {
+    index = Number(dot.dataset.index);
+    updateCarousel();
+  });
+});
+
+setInterval(() => {
+  index = (index + 1) % totalSlides;
+  updateCarousel();
+}, 3000); // Auto-slide every 3 seconds
+
+updateCarousel(); // Initialize
